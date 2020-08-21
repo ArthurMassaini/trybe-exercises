@@ -9,3 +9,6 @@ Tags podem ter atributos de podem determinar como o elemento dessa tag deve ser 
 
  <tag atributo="">Aqui é o elemento</tag>
 
+ Como pegar o CSS de um arquivo externo:
+ <link rel="stylesheet" type="text/css" href="mystyle.css">
+
