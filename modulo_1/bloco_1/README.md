@@ -1,4 +1,7 @@
-Explicações dos exercícios de shell script
+BLOCO 1 -> TERMINAL, BASH E SHELL SCRIPT.
+
+
+Explicações dos exercícios de shell script:
 
 
 Ex.01
