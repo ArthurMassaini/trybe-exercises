@@ -1,4 +1,33 @@
+html{
+    background-color: #F0F4EF;
+}
+
 body{
     margin:35px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.navigation{
+    background-color: #344966;
+    padding: 0px;
+}
+
+.navigation ul {
+    padding:0px;
+}
+
+.navigation ul li{
+    display: inline;
+    padding:0px;
+}
+
+.navigation ul li a{
+    color: white;
+    text-decoration: none;   
+    display:inline-block;
+    padding:30px;
+}
+
+.navigation ul li a:hover{
+    background-color: #01BAEF;
 }
