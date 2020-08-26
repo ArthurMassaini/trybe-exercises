@@ -41,12 +41,13 @@ body{
 .article{
     padding:20px;
 }
+
 .article h2{
     background-color:#CDD0D0;
 }
 
-.main-section{
-
+.article h2.ref-title{
+    margin-top: 100px;
 }
 
 .conteiner-geral{
@@ -78,10 +79,6 @@ body{
     width:300px;
 }
 
-.references{
-    margin-top:100px;
-}
-
 .references ul{
     padding:0px;
 }
@@ -94,3 +91,29 @@ body{
 .references ul li a{
     text-decoration: none;
 }
+
+.aside{
+    margin-top: 100px;
+    text-align: center;
+    border: solid;
+    padding:60px;
+}
+
+.aside a{
+    background-color: #344966;
+    color: white;
+    padding: 30px;
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+.aside a:hover{
+    background-color: #01BAEF;
+}
+
+.footer{
+    margin-top: 150px;
+    font-weight: bold;
+    font-style: italic;
+}
+
