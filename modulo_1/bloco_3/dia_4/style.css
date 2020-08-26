@@ -19,6 +19,7 @@ body{
 .navigation ul li{
     display: inline;
     padding:0px;
+    font-weight: bold;
 }
 
 .navigation ul li a{
@@ -30,4 +31,66 @@ body{
 
 .navigation ul li a:hover{
     background-color: #01BAEF;
+}
+
+.header{
+    text-align: center;
+    margin: 80px;
+}
+
+.article{
+    padding:20px;
+}
+.article h2{
+    background-color:#CDD0D0;
+}
+
+.main-section{
+
+}
+
+.conteiner-geral{
+    width:60%;
+    display: inline-block;
+    margin-right: 150px;
+    text-align:center;
+
+}
+
+.conteiner-tabela{
+    display: inline-block;
+}
+
+.other-fact{
+    margin-top: 100px;
+    
+}
+
+.other-fact div{
+    width: 60%;
+    display:inline-block;
+    margin-right: 150px;
+    text-align: center;
+}
+
+.other-fact img{
+    display:inline-block;
+    width:300px;
+}
+
+.references{
+    margin-top:100px;
+}
+
+.references ul{
+    padding:0px;
+}
+
+.references ul li{
+    display:inline;
+
+}
+
+.references ul li a{
+    text-decoration: none;
 }
