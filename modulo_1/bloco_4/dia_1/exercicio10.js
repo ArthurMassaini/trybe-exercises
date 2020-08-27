@@ -18,5 +18,5 @@ let lucro = valorVenda * qtd - custoProdFinal * qtd;
 if (custoProd < 0 || valorVenda < 0) {
   console.log("Custo do produto ou valor de venda inválidos!");
 } else {
-  console.log("O lucro de " + qtd + " produto(s) é: " + lucro);
+  console.log("O lucro de " + qtd +" produto(s) é: " + lucro);
 }
