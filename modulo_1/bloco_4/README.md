@@ -1,0 +1,1 @@
+Exercício iniciais sobre Javascript e lógica de programação
