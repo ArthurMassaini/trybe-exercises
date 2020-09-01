@@ -10,5 +10,5 @@ function somatorio(num) {
   return soma;
 }
 
-valor = somatorio(5);
-console.log(valor);
+resultado = somatorio(5);
+console.log(resultado);
