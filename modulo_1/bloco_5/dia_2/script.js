@@ -28,3 +28,9 @@ primeiraDiv.appendChild(divEsquerda);
 let divDireita = document.createElement("div");
 divDireita.className = "right-content";
 primeiraDiv.appendChild(divDireita);
+
+//Sétima tarefa
+let imagem = document.createElement("img");
+imagem.className = "small-image";
+imagem.src = "https://picsum.photos/200";
+divEsquerda.appendChild(imagem);
