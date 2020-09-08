@@ -34,3 +34,14 @@ let imagem = document.createElement("img");
 imagem.className = "small-image";
 imagem.src = "https://picsum.photos/200";
 divEsquerda.appendChild(imagem);
+
+//Oitava tarefa
+let lista = document.createElement("ul");
+for (let i = 0; i < 10; i += 1) {
+    let itemLista = document.createElement("li");
+    itemLista.innerHTML = i;
+    lista.appendChild(itemLista);
+}
+divDireita.appendChild(lista);
+
+//nona tarefa
