@@ -16,3 +16,6 @@ primeiraDiv.appendChild(segundaDiv);
 
 //Quarta tarefa
 
+let primeiroP = document.createElement("p");
+segundaDiv.appendChild(primeiroP);
+document.querySelector("p").innerHTML = "Algum texto";
