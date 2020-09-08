@@ -1,3 +1,5 @@
+//------------------------------------------------------------1ªPARTE
+
 //Primeira tarefa
 
 let body = document.querySelector("body");
@@ -59,3 +61,9 @@ let titulo4 = document.createElement("h3");
 primeiraDiv.appendChild(titulo2);
 primeiraDiv.appendChild(titulo3);
 primeiraDiv.appendChild(titulo4);
+
+//------------------------------------------------------------2ª PARTE
+
+//Tarefa 1
+
+titulo.className = "title";
