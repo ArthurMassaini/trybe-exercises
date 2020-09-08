@@ -104,7 +104,10 @@ divCentral.parentNode.style.backgroundColor = "green";
 let todosItems = document.querySelectorAll("li");
 
 for (let i = 0; i < todosItems.length; i += 1) {
-  if (todosItems[i].innerText.includes("nove") || todosItems[i].innerText.includes("dez")) {
-      lista.removeChild(todosItems[i]);
+  if (
+    todosItems[i].innerText.includes("nove") ||
+    todosItems[i].innerText.includes("dez")
+  ) {
+    lista.removeChild(todosItems[i]);
   }
 }
