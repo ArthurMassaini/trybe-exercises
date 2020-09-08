@@ -46,9 +46,22 @@ divEsquerda.appendChild(imagem);
 //Oitava tarefa
 
 let lista = document.createElement("ul");
-for (let i = 0; i < 10; i += 1) {
+let num = [
+  "um",
+  "dois",
+  "tres",
+  "quatro",
+  "cinco",
+  "seis",
+  "sete",
+  "oito",
+  "nove",
+  "dez",
+];
+
+for (let i in num) {
   let itemLista = document.createElement("li");
-  itemLista.innerHTML = i;
+  itemLista.innerHTML = num[i];
   lista.appendChild(itemLista);
 }
 divDireita.appendChild(lista);
@@ -78,6 +91,20 @@ titulo4.className = "description";
 
 primeiraDiv.removeChild(divEsquerda);
 
-//Tarefa 4 
+//Tarefa 4
 
 divDireita.style.marginRight = "auto";
+
+//Tarefa 5
+
+divCentral.parentNode.style.backgroundColor = "green";
+
+//Tarefa 6
+
+let todosItems = document.querySelectorAll("li");
+
+for (let i = 0; i < todosItems.length; i += 1) {
+  if (todosItems[i].innerText.includes("nove") || todosItems[i].innerText.includes("dez")) {
+      lista.removeChild(todosItems[i]);
+  }
+}
