@@ -67,3 +67,17 @@ primeiraDiv.appendChild(titulo4);
 //Tarefa 1
 
 titulo.className = "title";
+
+//Tarefa 2
+
+titulo2.className = "description";
+titulo3.className = "description";
+titulo4.className = "description";
+
+//Tarefa 3
+
+primeiraDiv.removeChild(divEsquerda);
+
+//Tarefa 4 
+
+divDireita.style.marginRight = "auto";
