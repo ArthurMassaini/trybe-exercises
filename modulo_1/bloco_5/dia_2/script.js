@@ -1,16 +1,18 @@
-function criaH1() {
-  let body = document.querySelector("body");
+//Primeira tarefa
 
-  let titulo = document.createElement("h1");
+let body = document.querySelector("body");
+let titulo = document.createElement("h1");
+body.appendChild(titulo);
 
-  return body.appendChild(titulo);
-}
-criaH1();
+//Segunda tarefa
+let primeiraDiv = document.createElement("div");
+primeiraDiv.className = "main-content";
+body.appendChild(primeiraDiv);
 
-function criaDiv() {
-  let body = document.querySelector("body");
-  let primeiraDiv = document.createElement("div");
-  primeiraDiv.className = "main-content";
-  return body.appendChild(primeiraDiv);
-}
-criaDiv();
+//Terceira tarefa
+let segundaDiv = document.createElement("div");
+segundaDiv.className = "center-content";
+primeiraDiv.appendChild(segundaDiv);
+
+//Quarta tarefa
+
