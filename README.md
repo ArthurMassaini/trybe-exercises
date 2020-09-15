@@ -6,7 +6,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias Ágeis e habilidades comportamentais.
 
-## Módulo 1: Introdução - Desenvolvimento Web :white_check_mark:
+## Módulo 1: Fundamentos do desenvolvimento web :white_check_mark:
 
 ##### Bloco 1: Introdução - Unix & Shell
 
@@ -41,16 +41,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-1: _JavaScript - DOM e seletores_
 - [X] 5-2: _JavaScript - Trabalhando com elementos_
 - [X] 5-3: _JavaScript - Eventos_
-- [ ] 5-4: _JavaScript - Web Storage_
-- [ ] 5-5: _[Projeto - Meme Generator]()_
-- [ ] 5-6: _[Projeto - Arte com Pixels]()_
+- [X] 5-4: _JavaScript - Web Storage_
+- [X] 5-5: _[Projeto - Meme Generator]()_
+- [X] 5-6: _[Projeto - Arte com Pixels]()_
 - [ ] 5-7: _[Projeto - Lista de tarefas]()_
 - [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
 
-## Módulo 2: Desenvolvimento Front-end :hourglass_flowing_sand:
-
-##### Bloco 6: Introdução - Front-end
+##### Bloco 6: HTML E CSS - Próximos passos
 
 - [ ] 6-1: _HTML & CSS - Forms_
 - [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
@@ -86,6 +84,8 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 10-2: _Jest - Testes Assí­ncronos_
 - [ ] 10-3: _Jest - Simulando comportamentos_
 - [ ] 10-4: _[Projeto - Jest AssÃ­ncrono e Mocking]()_
+
+## Módulo 2: Desenvolvimento Front-end :hourglass_flowing_sand:
 
 ##### Bloco 11: Introdução - React
 
