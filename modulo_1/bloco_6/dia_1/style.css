@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+.form .dados-pessoais {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.form .dados-pessoais .input1 {
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.form .dados-pessoais .input2 {
+  width: 1000px;
+  margin-bottom: 30px;
+}
+
+.form .dados-pessoais select {
+  margin-bottom: 30px;
+}
+
+.form .dados-empregos {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.form .dados-empregos .input1 {
+  width: 350px;
+  margin-bottom: 30px;
+}
+
+.form .dados-empregos .input2 {
+  width: 1000px;
+  margin-bottom: 30px;
+}
+
+.section-resultado {
+  text-align: center;
+}
+
+.section-resultado .dados {
+  display: inline-block;
+}
