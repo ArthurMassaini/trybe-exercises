@@ -105,13 +105,14 @@ let buttonLimpar = document.querySelector('#button-limpar');
 
 buttonLimpar.addEventListener('click', function () {
   let textos = document.querySelectorAll('p');
-  for (let i in textos) {
-    textos[i].innerHTML = '';
-  }
+  let dados = document.querySelector('#dados');
   name.value = '';
   email.value = '';
   cpf.value = '';
   adress.value = '';
   city.value = '';
   state.value = '';
+  for (let i in textos) {
+    dados.removeChild(textos[i]);
+  }
 });
