@@ -36,3 +36,11 @@ body {
   width: 1000px;
   margin-bottom: 30px;
 }
+
+.section-resultado {
+  text-align: center;
+}
+
+.section-resultado .dados {
+  display: inline-block;
+}

@@ -60,9 +60,9 @@
         <select id="state" required></select
         ><br />
 
-        <input type="radio" id="house" name="tipo-casa" required />
+        <input type="radio" id="house" name="tipo-casa" value="Casa" required />
         <label for="house" class="radio">Casa</label>
-        <input type="radio" id="ap" name="tipo-casa" required />
+        <input type="radio" id="ap" name="tipo-casa" value="Apartamento" required />
         <label for="ap" class="radio">Apartamento</label>
       </fieldset>
 
@@ -100,15 +100,13 @@
         <label for="data">Data de inicio:</label>
         <input type="text" id="data" class="input1" required /><br />
       </fieldset>
+
+      <button type="submit" id="button-enviar">Enviar</button>
+      <button id="button-limpar">Limpar</button>
     </form>
 
-    <section class="section-buttons">
-      <button type="submit" id="button-enviar">Enviar</button>
-      <button>Limpar</button>
-    </section>
-
     <section class="section-resultado">
-      <div></div>
+      <div id="dados"></div>
     </section>
     <script src="script.js"></script>
   </body>

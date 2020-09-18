@@ -58,14 +58,60 @@ function verificaData() {
     }
     ano = parseInt(ano);
 
-    if (dia > 0 && dia <= 31 && mes > 0 && mes <= 12 && ano < 0) {
+    if (dia > 0 && dia <= 31 && mes > 0 && mes <= 12 && ano > 0) {
       data.value = data.value;
+      console.log(data.value);
     } else {
       alert('Data inválida!');
       data.value = '';
     }
+  } else {
+    alert('Data inválida!');
+    data.value = '';
   }
 }
 
 let buttonEnviar = document.querySelector('#button-enviar');
 buttonEnviar.addEventListener('click', verificaData);
+
+//---------------------------------------------------------------------------------
+
+let dados = document.querySelector('#dados');
+let name = document.querySelector('#name');
+let email = document.querySelector('#email');
+let cpf = document.querySelector('#cpf');
+let adress = document.querySelector('#adress');
+let city = document.querySelector('#city');
+let state = document.querySelector('#state');
+
+function geraFilhoTexto() {
+  let texto = document.createElement('p');
+  dados.appendChild(texto);
+  return texto;
+}
+
+buttonEnviar.addEventListener('click', function () {
+  geraFilhoTexto().innerHTML = name.value;
+  geraFilhoTexto().innerHTML = email.value;
+  geraFilhoTexto().innerHTML = cpf.value;
+  geraFilhoTexto().innerHTML = adress.value;
+  geraFilhoTexto().innerHTML = city.value;
+  geraFilhoTexto().innerHTML = state.value;
+});
+
+//-------------------------------------------------------------------------------------
+
+let buttonLimpar = document.querySelector('#button-limpar');
+
+buttonLimpar.addEventListener('click', function () {
+  let textos = document.querySelectorAll('p');
+  for (let i in textos) {
+    textos[i].innerHTML = '';
+  }
+  name.value = '';
+  email.value = '';
+  cpf.value = '';
+  adress.value = '';
+  city.value = '';
+  state.value = '';
+});
