@@ -46,11 +46,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-6: _[Projeto - Arte com Pixels](https://github.com/ArthurMassaini/pixels-art-project)_
 - [X] 5-7: _[Projeto - Lista de tarefas](https://github.com/ArthurMassaini/to-do-list-project)_
 - [X] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/ArthurMassaini/project-color-guess)_
-- [X] 5-7: _[Projeto - Carta Misteriosa]()_
+- [X] 5-7: _[Projeto - Carta Misteriosa](https://github.com/ArthurMassaini/project-mistery-letter)_
 
 ##### Bloco 6: HTML E CSS - Próximos passos
 
-- [ ] 6-1: _HTML & CSS - Forms_
+- [X] 6-1: _HTML & CSS - Forms_
 - [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
 - [ ] 6-3: _CSS Flexbox - Part 1_
 - [ ] 6-4: _CSS Flexbox - Part 2_
