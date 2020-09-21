@@ -40,8 +40,13 @@ addEstados();
 
 //-----------------------------------------------------------
 
-let data = new Pickaday({ field: document.getElementById('datepicker') });
-Pickaday();
+var field = document.getElementById('datepicker');
+var picker = new Pikaday({
+  onSelect: function (date) {
+    field.value = picker.toString();
+  },
+});
+field.parentNode.insertBefore(picker.el, field.nextSibling);
 
 // function verificaData() {
 //   let dia = '';

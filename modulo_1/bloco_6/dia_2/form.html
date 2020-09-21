@@ -13,6 +13,7 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
     />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <section class="container">
@@ -110,22 +111,48 @@
         <fieldset class="form-group">
           <legend>Dados último emprego</legend>
 
-          <label for="resume">Resumo do curriculo:</label><br />
-          <textarea id="resume" maxlength="1000" required></textarea
-          ><br /><br />
+          <div class="form-group">
+            <label for="resume">Resumo do curriculo:</label>
+            <textarea
+              class="form-control"
+              id="resume"
+              maxlength="1000"
+              required
+            ></textarea>
+          </div>
 
-          <label for="cargo">Cargo:</label>
-          <input type="text" id="cargo" maxlength="40" required /><br />
+          <div class="form-group">
+            <label for="cargo">Cargo:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="cargo"
+              maxlength="40"
+              required
+            />
+          </div>
 
-          <label for="descricao">Descrição do cargo:</label>
-          <input type="text" id="descricao" maxlength="500" required /><br />
+          <div class="form-group">
+            <label for="descricao">Descrição do cargo:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="descricao"
+              maxlength="500"
+              required
+            />
+          </div>
 
-          <label for="data">Data de inicio:</label>
-          <input type="text" id="datepicker" required /><br />
+          <div class="form-group">
+            <label for="data">Data de inicio:</label>
+            <input class="form-control" type="text" id="datepicker" required />
+          </div>
         </fieldset>
 
-        <button type="submit" id="button-enviar">Enviar</button>
-        <button id="button-limpar">Limpar</button>
+        <button type="submit" id="button-enviar" class="btn btn-primary">
+          Enviar
+        </button>
+        <button id="button-limpar" class="btn btn-secondary">Limpar</button>
       </form>
     </section>
 
@@ -134,7 +161,6 @@
     </section>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -150,5 +176,6 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
   </body>
 </html>
