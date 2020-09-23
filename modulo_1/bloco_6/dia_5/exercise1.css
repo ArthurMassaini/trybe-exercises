@@ -1,9 +1,9 @@
-body {
+/* body {
 }
 h1 {
 }
 h2 {
-}
+} */
 
 img {
   max-width: 100%;
@@ -41,5 +41,14 @@ figure {
   }
   figure{
     margin: 10px;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  body{
+    background-color: antiquewhite;
+    margin: 40px;
+    font-size: 1.5rem;
+    max-width: 100%;
   }
 }
