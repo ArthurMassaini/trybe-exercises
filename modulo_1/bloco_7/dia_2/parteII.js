@@ -63,7 +63,7 @@ const criaObjeto = (objeto1, objeto2, objeto3) => {
   allLessons['lesson3'] = newLesson3;
   return allLessons;
 };
-let objetoNovo = criaObjeto(lesson1, lesson2, lesson3);
+let objetoCompleto = criaObjeto(lesson1, lesson2, lesson3);
 
 //-----------------------------------------------------------------------Exercício 06
 
@@ -74,7 +74,7 @@ const qtdAlunos = (objeto) => {
   }
   return quantidade;
 };
-const quantidadeAlunos = qtdAlunos(objetoNovo);
+const quantidadeAlunos = qtdAlunos(objetoCompleto);
 
 //-----------------------------------------------------------------------Exercício 07
 
@@ -102,3 +102,39 @@ const verifyPair = (objeto, chave, valor) => {
 
 let verifica1 = verifyPair(lesson3, 'turno', 'noite');
 let verifica2 = verifyPair(lesson3, 'materia', 'Maria Clara');
+
+//-----------------------------------------------------------------------Bônus 01
+
+const countStudentsMath = (objeto) => {
+  let count = 0;
+
+  for (let i in objeto) {
+    if (objeto[i].materia === 'Matemática') {
+      count += objeto[i].numeroEstudantes;
+    }
+  }
+  return count;
+};
+
+let qtdAlunosMatematica = countStudentsMath(objetoCompleto);
+
+//-----------------------------------------------------------------------Bônus 02
+
+const createReport = (objeto, nomeProfessor) => {
+  let objetoProf = {};
+  let array = [];
+  let count = 0;
+  for (let i in objeto) {
+    if (objeto[i].professor === nomeProfessor) {
+      objetoProf.professor = objeto[i].professor;
+      count += objeto[i].numeroEstudantes;
+      array.push(objeto[i].materia);
+    }
+  }
+  objetoProf.aulas = array;
+  objetoProf.estudantes = count;
+  return objetoProf;
+};
+
+let objTeste = createReport(objetoCompleto, 'Maria Clara');
+console.log(objTeste);
