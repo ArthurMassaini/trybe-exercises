@@ -32,8 +32,8 @@ assert.deepStrictEqual(
 
 let array = [1, 2, 3, 4];
 myRemoveWithoutCopy(array, 3);
-assert.DeepStrictEqual(
+assert.deepStrictEqual(
   array,
-  [1, 2, 3, 4],
+  [1, 2, 4],
   'O array do parametro esperado é [1, 2, 4] depois das alteracoes'
 );
