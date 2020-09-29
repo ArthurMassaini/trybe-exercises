@@ -14,3 +14,6 @@ assert.ok(sum(0, 0) === 0, 'A soma de 4 + 5 = 9');
 
 assert.ok(sum(4, '5') === 9);
 
+assert.throws(() => {
+  sum(4, '5');
+}, Error);
