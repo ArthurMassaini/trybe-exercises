@@ -63,11 +63,16 @@ const books = [
   },
 ];
 
-const authorBornIn1947 = (books) => {
-  const author = books.find((element) => {
-    return element.author.birthYear === 1947;
+const smallerName = (books) => {
+  let nameBook = books[0].name;
+  // escreva aqui o seu código,
+  books.forEach((element) => {
+    if (element.name.length < nameBook.length) {
+      nameBook = element.name;
+    }
   });
-  return author.author.name;
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
 };
 
-assert.strictEqual(authorBornIn1947(books), 'Stephen King');
+assert.strictEqual(smallerName(books), 'Duna');
