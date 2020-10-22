@@ -1,0 +1,23 @@
+{
+  "name": "trybe-exercises",
+  "version": "1.0.0",
+  "description": "Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Arthur Massaini de Santana](https://www.linkedin.com/in/arthur-massaini-de-santana-0b1b77150/)_ enquanto estudo na [Trybe](https://www.betrybe.com/) :rocket:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurMassaini/trybe-exercises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurMassaini/trybe-exercises/issues"
+  },
+  "homepage": "https://github.com/ArthurMassaini/trybe-exercises#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
