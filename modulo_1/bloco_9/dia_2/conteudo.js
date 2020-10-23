@@ -53,10 +53,15 @@ async function verifiedFetch(url) {
 async function sendJokeToFriend(name) {
   const message = await verifiedFetch(
     'https://api.chucknorris.io/jokes/random?category=dev'
-  )
-    .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
-    .catch((err) => err);
-  console.log(message);
+  );
+  // .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+  // .catch((err) => err);
+
+  try {
+    console.log(`Oi ${name}, ouve essa: ${message}`);
+  } catch {
+    console.log(message);
+  }
 }
 
 sendJokeToFriend('Anna');
