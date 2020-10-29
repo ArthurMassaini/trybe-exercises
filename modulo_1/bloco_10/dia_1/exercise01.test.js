@@ -23,8 +23,8 @@ describe('Function that return the array minus the second value on parameter', (
     expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
   });
   test('if the array passed on parameter have not changed', () => {
-    const array = [1, 2, 3, 4];
+    const array = [1, 2, 3, 4, 5];
     myRemove(array, 3);
-    expect(array).toEqual([1, 2, 3, 4]);
+    expect(array).toEqual([1, 2, 3, 4, 5]);
   });
 });
