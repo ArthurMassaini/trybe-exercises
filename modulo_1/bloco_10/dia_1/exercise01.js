@@ -6,4 +6,16 @@ const sum = (a, b) => {
   return a + b;
 };
 
-module.exports = { sum };
+//------------------------------------------------------------------------------
+
+function myRemove(arr, item) {
+  let newArr = [];
+  arr.forEach((element) => {
+    if (element !== item) {
+      newArr.push(element);
+    }
+  });
+  return newArr;
+}
+
+module.exports = { sum, myRemove };
