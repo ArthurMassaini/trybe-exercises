@@ -1,5 +1,9 @@
-const division = (x, y) => x / y;
+const sum = (a, b) => {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('parameters must be numbers');
+  }
 
-const sum = (x, y) => x + y;
+  return a + b;
+};
 
-module.exports = { division, sum };
+module.exports = { sum };
