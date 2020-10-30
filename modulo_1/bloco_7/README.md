@@ -1,1 +1,12 @@
-Exercícios sobre as mudanças do JS ES6
+Exercícios sobre: 
+
+-Mudanças do JS ES6: 
+    -Arrow Functions
+    -Template Literals
+
+-Manipulação de objetos:
+    -Object.values
+    -Object.keys
+    -Object.assign
+
+-TDD e testes unitários com assert
