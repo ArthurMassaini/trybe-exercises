@@ -7,8 +7,10 @@ const task = (value) => {
 
 const array = ['Estudar', 'Fazer TCC', 'Zerar ghost of tsushima'];
 
-function App() {
-  return array.map((element) => task(element));
+class App extends React.Component {
+  render() {
+    return array.map((element) => task(element));
+  }
 }
 
 export default App;
