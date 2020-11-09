@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Pokemon from './Pokemon.js';
+import Pokedex from './Pokedex';
 import pokemons from './data.js';
 
 class App extends React.Component {
@@ -8,11 +8,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Pokedex</h1>
-        <div className="pokedex">
-          {pokemons.map((element) => (
-            <Pokemon key={element.id} data={element} />
-          ))}
-        </div>
+        <Pokedex pokemons={pokemons} />
       </div>
     );
   }
