@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from './TextInput';
 import SelectInput from './SelectInput';
+import RadioInput from './RadioInput';
 import estados from '../dataEstados';
 
 class Form extends React.Component {
@@ -22,6 +23,7 @@ class Form extends React.Component {
 
   handleChange({ target }) {
     const { name, value } = target;
+
     this.setState({
       [name]: value,
     });
@@ -76,21 +78,25 @@ class Form extends React.Component {
             options={estados}
           />
 
-          <label>Tipo do logradouro: </label>
-          <input
-            value="casa"
-            name="logradouro"
-            type="radio"
-            onChange={this.handleChange}
-          />
-          <label>Casa</label>
-          <input
-            value="apartamento"
-            name="logradouro"
-            type="radio"
-            onChange={this.handleChange}
-          />
-          <label>Apartamento</label>
+          <div class="radio">
+            <label>Tipo de logradouro: </label>
+
+            <RadioInput
+              label="Casa"
+              name="logradouro"
+              value="casa"
+              checked={this.state.logradouro === 'casa'}
+              handleChange={this.handleChange}
+            />
+
+            <RadioInput
+              label="Apartamento"
+              name="logradouro"
+              value="apartamento"
+              checked={this.state.logradouro === 'apartamento'}
+              handleChange={this.handleChange}
+            />
+          </div>
         </fieldset>
       </form>
     );

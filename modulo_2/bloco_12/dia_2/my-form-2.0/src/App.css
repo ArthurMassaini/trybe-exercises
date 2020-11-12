@@ -21,3 +21,13 @@
   margin-top: 15px;
   flex-direction: column;
 }
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-radio {
+  margin-top: 15px;
+}
