@@ -12,5 +12,12 @@
   min-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  flex-direction: column;
 }

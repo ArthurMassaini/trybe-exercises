@@ -1,4 +1,5 @@
 import React from 'react';
+import TextInput from './TextInput';
 
 class Form extends React.Component {
   constructor() {
@@ -30,44 +31,39 @@ class Form extends React.Component {
         <fieldset className="fieldset">
           <legend>Dados Pessoais</legend>
 
-          <label>Nome: </label>
-          <input
+          <TextInput
+            label="Nome: "
             name="nome"
-            type="text"
-            onChange={this.handleChange}
             value={this.state.nome}
+            handleChange={this.handleChange}
           />
 
-          <label>Email: </label>
-          <input
+          <TextInput
+            label="Email: "
             name="email"
-            type="email"
-            onChange={this.handleChange}
             value={this.state.email}
+            handleChange={this.handleChange}
           />
 
-          <label>CPF: </label>
-          <input
+          <TextInput
+            label="CPF: "
             name="cpf"
-            type="text"
-            onChange={this.handleChange}
             value={this.state.cpf}
+            handleChange={this.handleChange}
           />
 
-          <label>Endereço: </label>
-          <input
+          <TextInput
+            label="Endereço: "
             name="endereco"
-            type="text"
-            onChange={this.handleChange}
             value={this.state.endereco}
+            handleChange={this.handleChange}
           />
 
-          <label>Cidade: </label>
-          <input
+          <TextInput
+            label="Cidade: "
             name="cidade"
-            type="text"
-            onChange={this.handleChange}
             value={this.state.cidade}
+            handleChange={this.handleChange}
           />
 
           <label>Estado: </label>
