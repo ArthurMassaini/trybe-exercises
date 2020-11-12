@@ -38,7 +38,7 @@ class Form extends React.Component {
           <TextInput
             label="Nome: "
             name="nome"
-            value={this.state.nome}
+            value={this.state.nome.toUpperCase()}
             handleChange={this.handleChange}
           />
 

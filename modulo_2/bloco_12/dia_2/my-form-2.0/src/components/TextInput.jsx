@@ -7,7 +7,13 @@ class TextInput extends React.Component {
     return (
       <div className="inputs">
         <label>{label} </label>
-        <input name={name} type="text" onChange={handleChange} value={value} />
+        <input
+          name={name}
+          type="text"
+          onChange={handleChange}
+          value={value}
+          required
+        />
       </div>
     );
   }
