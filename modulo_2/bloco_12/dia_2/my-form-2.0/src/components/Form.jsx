@@ -1,5 +1,7 @@
 import React from 'react';
 import TextInput from './TextInput';
+import SelectInput from './SelectInput';
+import estados from '../dataEstados';
 
 class Form extends React.Component {
   constructor() {
@@ -66,15 +68,13 @@ class Form extends React.Component {
             handleChange={this.handleChange}
           />
 
-          <label>Estado: </label>
-          <select
+          <SelectInput
+            label="Estado: "
             name="estado"
-            onChange={this.handleChange}
             value={this.state.estado}
-          >
-            <option value="sp">SP</option>
-            <option value="rj">RJ</option>
-          </select>
+            handleChange={this.handleChange}
+            options={estados}
+          />
 
           <label>Tipo do logradouro: </label>
           <input
