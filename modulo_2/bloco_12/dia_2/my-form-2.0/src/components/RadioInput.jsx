@@ -12,6 +12,7 @@ class RadioInput extends React.Component {
           type="radio"
           checked={checked}
           onChange={handleChange}
+          required
         />
         <label>{label}</label>
       </div>

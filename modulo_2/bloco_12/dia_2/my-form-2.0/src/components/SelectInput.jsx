@@ -7,7 +7,7 @@ class SelectInput extends React.Component {
     return (
       <div className="inputs">
         <label>{label} </label>
-        <select name={name} onChange={handleChange} value={value}>
+        <select name={name} onChange={handleChange} value={value} required>
           <option>Escolha</option>
 
           {options.map((element) => (
