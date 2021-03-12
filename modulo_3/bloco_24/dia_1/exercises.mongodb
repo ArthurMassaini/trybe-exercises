@@ -1,0 +1,88 @@
+use("class");
+db.movies.find();
+
+// -------------------------------- exercicio 01
+
+use("class");
+db.movies.updateOne({ title: 'Batman' }, { $set: { imdbRating: 7.7 } });
+
+// -------------------------------- exercicio 02
+
+use("class");
+db.movies.updateOne({ title: 'Godzilla' }, { $set: { budget: 1 } });
+
+// -------------------------------- exercicio 03
+
+use("class");
+db.movies.updateOne(
+  { title: 'Home Alone' },
+  { $set: { budget: 15, imdbRating: 5.5 } }
+);
+
+// -------------------------------- exercicio 04
+
+use("class");
+db.movies.updateOne({ title: 'Batman' }, { $inc: { imdbRating: 2 } });
+
+// -------------------------------- exercicio 05
+
+use("class");
+db.movies.updateOne({ title: 'Home Alone' }, { $inc: { budget: 5 } });
+
+// -------------------------------- exercicio 06
+
+use("class");
+db.movies.updateOne({ title: 'Batman' }, { $mul: { imdbRating: 4 } });
+
+// -------------------------------- exercicio 07
+
+use("class");
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $rename: { budget: 'estimatedBudget' } }
+);
+
+// -------------------------------- exercicio 08
+
+use("class");
+db.movies.updateOne(
+  { title: 'Home Alone' },
+  { $min: { budget: 5 } }
+);
+
+
+// -------------------------------- exercicio 09
+
+use("class");
+db.movies.updateOne(
+  { title: 'Godzilla' },
+  { $max: { imdbRating: 8.6 }, $set: { 'category.1': 'thriller' } }
+);
+
+// -------------------------------- exercicio 10
+
+use("class");
+db.movies.updateOne(
+  { title: 'Home Alone' },
+  { $currentDate: { lastUpdated: { $type: 'timestamp' } } }
+);
+
+// -------------------------------- exercicio 11
+
+use("class");
+db.movies.updateMany({}, { $set: { sequels: 0 } });
+
+// -------------------------------- exercicio 12
+
+use("class");
+db.movies.updateMany({}, { $unset: { budget: '', estimatedBudget: '' } });
+
+// -------------------------------- exercicio 13
+
+use("class");
+db.movies.updateMany(
+  { $or: [{ title: 'Batman' }, { title: 'Home Alone' }] },
+  { $max: { imdbRating: 17 } }
+);
+
+
