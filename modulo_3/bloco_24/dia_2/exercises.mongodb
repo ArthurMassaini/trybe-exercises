@@ -1,0 +1,205 @@
+// ---------------------------------------- exercício 01
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $push: { category: 'superhero' } }
+);
+
+// ---------------------------------------- exercício 02
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $push: { category: { $each: ['villain', 'comic-based'] } } }
+);
+
+// ---------------------------------------- exercício 03
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $pop: { category: -1 } }
+);
+
+// ---------------------------------------- exercício 04
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $pop: { category: -1 } }
+);
+
+// ---------------------------------------- exercício 05
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $pop: { category: 1 } }
+);
+
+// ---------------------------------------- exercício 06
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $addToSet: { category: 'action' } }
+);
+
+// ---------------------------------------- exercício 07
+
+use("class");
+db.movies.updateMany(
+  {
+    title: { $in: ['Batman', 'Home Alone'] },
+  },
+  { $addToSet: { category: "90's" } }
+);
+
+
+// ---------------------------------------- exercício 08
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Home Alone',
+  },
+  {
+    $addToSet: {
+      cast: {
+        $each: [
+          {
+            actor: 'Macaulay Culkin',
+            character: 'Kevin',
+          },
+          {
+            actor: 'Joe Pesci',
+            character: 'Harry',
+          },
+          {
+            actor: 'Daniel Stern',
+          },
+        ],
+      },
+    },
+  }
+);
+
+
+// ---------------------------------------- exercício 09
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Home Alone',
+  },
+  {
+    $set: {
+      'cast.$[element].character': 'Marv',
+    },
+  },
+  { arrayFilters: [{ 'element.actor': 'Daniel Stern' }] }
+);
+
+// ---------------------------------------- exercício 10
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Batman',
+  },
+  {
+    $addToSet: {
+      cast: {
+        $each: [
+          {
+            character: 'Batman',
+          },
+          {
+            character: 'Alfred',
+          },
+          {
+            character: 'Coringa',
+          },
+        ],
+      },
+    },
+  }
+);
+
+// ---------------------------------------- exercício 11
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Batman',
+  },
+  {
+    $push: {
+      'cast.$[element].actor': 'Christian Bale',
+    },
+  },
+  { arrayFilters: [{ 'element.character': 'Batman' }] }
+);
+
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Batman',
+  },
+  {
+    $push: {
+      'cast.$[element].actor': 'Michael Caine',
+    },
+  },
+  { arrayFilters: [{ 'element.character': 'Alfred' }] }
+);
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Batman',
+  },
+  {
+    $push: {
+      'cast.$[element].actor': 'Heath Ledger',
+    },
+  },
+  { arrayFilters: [{ 'element.character': 'Coringa' }] }
+);
+
+// ---------------------------------------- exercício 12
+
+use("class");
+db.movies.updateMany(
+  {
+    title: 'Batman',
+  },
+  {
+    $push: {
+      'cast.$[element].actor': {
+        $each: ['Michael Keaton', 'Val Kilmer', 'George Clooney'],
+        $sort: 1,
+      },
+    },
+  },
+  { arrayFilters: [{ 'element.character': 'Batman' }] }
+);
+
+// ---------------------------------------- testes
+
+use("class");
+db.movies.find();
