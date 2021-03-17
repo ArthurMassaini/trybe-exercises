@@ -1,0 +1,254 @@
+use("teste");
+db.teste.updateMany({}, { $addToSet: { newResults: { $each: [{75}, 88, 89] } } });
+
+use("teste");
+db.teste.find({
+  tags: 'red',
+  name: "Product"
+});
+
+use("teste");
+db.teste.find(
+  {
+    $and: [
+      { tags: "ssl" },
+      { tags: "security" }
+    ]
+  }
+);
+
+use("teste");
+db.teste.find({ newResults: { product: 'xyz', score: 7 } });
+
+
+use("teste");
+db.teste.find();
+
+// ---------------------------------------------------------------- exercício 01
+
+use("class");
+db.movies.find({
+  category: { $all: ['action', 'adventure'] },
+});
+
+// ---------------------------------------------------------------- exercício 02
+
+use("class");
+db.movies.find({
+  category: { $all: ['action'] },
+  imdbRating: { $gt: 7 },
+});
+
+// ---------------------------------------------------------------- exercício 03
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  { $addToSet: { ratings: { $each: [85, 100, 102, 105] } } }
+);
+
+// ---------------------------------------------------------------- exercício 04
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Godzilla',
+  },
+  { $addToSet: { ratings: { $each: [78, 52, 95, 102] } } }
+);
+
+// ---------------------------------------------------------------- exercício 05
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Home Alone',
+  },
+  { $addToSet: { ratings: { $each: [200, 99, 65] } } }
+);
+
+// ---------------------------------------------------------------- exercício 06
+
+use("class");
+db.movies.find(
+  {
+    ratings: { $elemMatch: { $gt: 103 } },
+  },
+  { title: 1, ratings: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 07
+
+use("class");
+db.movies.find(
+  {
+    ratings: { $elemMatch: { $gte: 100, $lte: 105 } },
+  },
+  { title: 1, ratings: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 08
+
+use("class");
+db.movies.find(
+  {
+    ratings: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9,0] } },
+  },
+  { title: 1, ratings: 1, _id: 0 }
+);
+
+
+// ---------------------------------------------------------------- exercício 09
+
+use("class");
+db.movies.find(
+  {
+    category: { $all: ['adventure'] },
+    ratings: { $elemMatch: { $gt: 103 } },
+  },
+  { title: 1, ratings: 1, category: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 10
+
+use("class");
+db.movies.find(
+  {
+    category: { $size: 2 },
+  },
+  { title: 1, _id: 0 }
+);
+
+
+// ---------------------------------------------------------------- exercício 11
+
+use("class");
+db.movies.find(
+  {
+    ratings: { $size: 4 },
+  },
+  { title: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 12
+
+use("class");
+db.movies.find({
+  budget: { $mod: [5, 0] },
+  category: { $size: 2 },
+});
+
+// ---------------------------------------------------------------- exercício 13
+
+use("class");
+db.movies.find(
+  {
+    $or: [
+      { ratings: { $elemMatch: { $gt: 199 } } },
+      { category: { $all: ['sci-fi'] } },
+    ],
+  },
+  { title: 1, ratings: 1, category: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 14
+
+use("class");
+db.movies.find(
+  {
+    ratings: { $size: 4 },
+    category: { $in: ['adventure', 'family'] },
+    imdbRating: { $gte: 7 },
+  },
+  { title: 1, ratings: 1, category: 1, _id: 0 }
+);
+
+// ---------------------------------------------------------------- exercício 15
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Batman',
+  },
+  {
+    $set: {
+      description:
+        'The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker.',
+    },
+  }
+);
+
+// ---------------------------------------------------------------- exercício 16
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Godzilla',
+  },
+  {
+    $set: {
+      description:
+        'The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity.',
+    },
+  }
+);
+
+// ---------------------------------------------------------------- exercício 17
+
+use("class");
+db.movies.updateOne(
+  {
+    title: 'Home Alone',
+  },
+  {
+    $set: {
+      description:
+        'An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.',
+    },
+  }
+);
+
+// ---------------------------------------------------------------- exercício 18
+
+use("class");
+db.movies.find({
+  description: { $regex: /^The/ },
+});
+
+// ---------------------------------------------------------------- exercício 19
+
+use("class");
+db.movies.find({
+  description: { $regex: /humanity.$/ },
+});
+
+// ---------------------------------------------------------------- exercício 20
+
+use("class");
+db.movies.createIndex({ description: "text" });
+
+// ---------------------------------------------------------------- exercício 21
+
+use("class");
+db.movies.find({ $text: { $search: 'vacation' } });
+
+// ---------------------------------------------------------------- exercício 22
+
+use("class");
+db.movies.find({ $text: { $search: 'monstrous criminal' } });
+
+// ---------------------------------------------------------------- exercício 23
+
+use("class");
+db.movies.find({ $text: { $search: "'when he is accidentally'" } });
+
+
+
+
+// ---------------------------------------------------------------- testes
+
+
+use("class");
+db.movies.find();
