@@ -2,7 +2,7 @@
 
 
 use('erp');
-db.clientes.aggregate([{ $match: { sexo: 'MASCULINO' } }]);
+db.clientes.aggregate([{ $match: { sexo: 'masculino' } }]);
 
 
 // -------------------------------------------------- exercício 02
@@ -12,7 +12,7 @@ use('erp');
 db.clientes.aggregate([
   {
     $match: {
-      sexo: 'FEMININO',
+      sexo: 'feminino',
       dataNascimento: {
         $gte: ISODate('1995-01-01'),
         $lte: ISODate('2005-12-31'),
@@ -29,7 +29,7 @@ use('erp');
 db.clientes.aggregate([
   {
     $match: {
-      sexo: 'FEMININO',
+      sexo: 'feminino',
       dataNascimento: {
         $gte: ISODate('1995-01-01'),
         $lte: ISODate('2005-12-31'),
@@ -45,7 +45,7 @@ db.clientes.aggregate([
 
 use('erp');
 db.clientes.aggregate([
-  { $match: { 'endereco.uf': 'SC' } },
+  { $match: { 'endereco.uf': 'sc' } },
   {
     $group: { _id: '$endereco.uf', total: { $sum: 1 } },
   },
