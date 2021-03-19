@@ -1,0 +1,103 @@
+// ------------------------------------- parte I
+
+
+use("agg_example");
+db.transactions.aggregate([
+  {
+    $match: { from: 'Dave America' },
+  },
+]);
+
+use("agg_example");
+db.transactions.aggregate([
+  {
+    $match: {
+      $or: [
+        {
+          value: { $gte: 700, $lte: 6000 },
+        },
+        { to: 'Lisa Simpson' },
+      ],
+    },
+  },
+]);
+
+use("agg_example");
+db.transactions.aggregate([
+  {
+    $match: { value: { $gt: 1000 } },
+  },
+  { $limit: 3 },
+]);
+
+
+// ------------------------------------- parte 2
+
+use('agg_example');
+db.transactions.aggregate([{ $group: { _id: '$bank' } }]);
+
+
+use('agg_example');
+db.transactions.aggregate([
+  { $group: { _id: '$bank', total: { $sum: '$value' }, count: { $sum: 1 } } },
+]);
+
+use('agg_example');
+db.transactions.aggregate([
+  { $group: { _id: null, total: { $sum: '$value' } } },
+]);
+
+use('agg_example');
+db.transactions.aggregate([
+  { $group: { _id: '$bank', total: { $sum: '$value' } } },
+  { $match: { total: { $gt: 100 } } },
+]);
+
+
+// ------------------------------------- parte 3
+
+
+use('agg_example');
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: 'transactions',
+      localField: 'name',
+      foreignField: 'from',
+      as: 'transacoes_feitas',
+    },
+  },
+]);
+
+use('agg_example');
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: 'transactions',
+      localField: 'name',
+      foreignField: 'to',
+      as: 'transacoes_recebidas',
+    },
+  },
+  { $limit: 4 },
+]);
+
+use('agg_example');
+db.clients.aggregate([
+  { $match: { State: 'Florida' } },
+  {
+    $lookup: {
+      from: 'transactions',
+      localField: 'name',
+      foreignField: 'to',
+      as: 'transacoes_recebidas',
+    },
+  },
+  { $limit: 4 },
+]);
+
+use('agg_example');
+db.transactions.find();
+
+use('agg_example');
+db.clients.find();

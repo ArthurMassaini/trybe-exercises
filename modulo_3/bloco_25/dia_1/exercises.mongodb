@@ -1,0 +1,236 @@
+// -------------------------------------------------- exercício 01
+
+
+use('erp');
+db.clientes.aggregate([{ $match: { sexo: 'MASCULINO' } }]);
+
+
+// -------------------------------------------------- exercício 02
+
+
+use('erp');
+db.clientes.aggregate([
+  {
+    $match: {
+      sexo: 'FEMININO',
+      dataNascimento: {
+        $gte: ISODate('1995-01-01'),
+        $lte: ISODate('2005-12-31'),
+      },
+    },
+  },
+]);
+
+
+// -------------------------------------------------- exercício 03
+
+
+use('erp');
+db.clientes.aggregate([
+  {
+    $match: {
+      sexo: 'FEMININO',
+      dataNascimento: {
+        $gte: ISODate('1995-01-01'),
+        $lte: ISODate('2005-12-31'),
+      },
+    },
+  },
+  { $limit: 5 },
+]);
+
+
+// -------------------------------------------------- exercício 04
+
+
+use('erp');
+db.clientes.aggregate([
+  { $match: { 'endereco.uf': 'SC' } },
+  {
+    $group: { _id: '$endereco.uf', total: { $sum: 1 } },
+  },
+]);
+
+
+// -------------------------------------------------- exercício 05
+
+
+use('erp');
+db.clientes.aggregate([
+  {
+    $group: { _id: '$sexo', total: { $sum: 1 } },
+  },
+]);
+
+
+// -------------------------------------------------- exercício 06
+
+
+use('erp');
+db.clientes.aggregate([
+  {
+    $group: { _id: { sexo: '$sexo', uf: '$endereco.uf' }, total: { $sum: 1 } },
+  },
+]);
+
+
+// -------------------------------------------------- exercício 07
+
+
+use('erp');
+db.clientes.aggregate([
+  {
+    $group: { _id: { sexo: '$sexo', uf: '$endereco.uf' }, total: { $sum: 1 } },
+  },
+  {
+    $project: {
+      estado: '$_id.uf',
+      sexo: '$_id.sexo',
+      total: '$total',
+      _id: 0,
+    },
+  },
+]);
+
+
+// -------------------------------------------------- exercício 08
+
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $group: { _id: '$clienteId', valor: { $sum: '$valorTotal' } },
+  },
+  { $sort: { valor: -1 } },
+  {
+    $limit: 5,
+  },
+]);
+
+
+// -------------------------------------------------- exercício 09
+
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: { $gte: ISODate('2019-01-01'), $lte: ISODate('2019-12-31') },
+    },
+  },
+  {
+    $group: { _id: '$clienteId', valor: { $sum: '$valorTotal' } },
+  },
+  { $sort: { valor: -1 } },
+  {
+    $limit: 10,
+  },
+]);
+
+
+// -------------------------------------------------- exercício 10
+
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $group: { _id: '$clienteId', qtd_compras: { $sum: 1 } },
+  },
+  {
+    $match: {
+      qtd_compras: { $gt: 5 },
+    },
+  },
+ { $count: 'clientes' } ,
+]);
+
+
+// -------------------------------------------------- exercício 11
+
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: { $gte: ISODate('2020-01-01'), $lte: ISODate('2020-03-31') },
+    },
+  },
+  {
+    $group: { _id: '$clienteId', qtd_compras: { $sum: 1 } },
+  },
+  {
+    $match: {
+      qtd_compras: { $lt: 3 },
+    },
+  },
+  { $count: 'clientes' },
+]);
+
+
+// -------------------------------------------------- exercício 12
+
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: { $gte: ISODate('2020-01-01'), $lte: ISODate('2020-12-31') },
+    },
+  },
+  {
+    $lookup: {
+      from: 'clientes',
+      localField: 'clienteId',
+      foreignField: 'clienteId',
+      as: 'dados_cliente',
+    },
+  },
+  { $unwind: '$dados_cliente' },
+  {
+    $group: {
+      _id: '$dados_cliente.endereco.uf',
+      qtd_compras: { $sum: 1 },
+    },
+  },
+  { $project: { totalVendas: '$qtd_compras', uf: '$_id', _id: 0 } },
+  { $sort: { totalVendas: -1 } },
+  { $limit: 3 },
+]);
+
+
+// -------------------------------------------------- exercício 13
+
+use('erp');
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: { $gte: ISODate('2019-01-01'), $lte: ISODate('2019-12-31') },
+    },
+  },
+  {
+    $lookup: {
+      from: 'clientes',
+      localField: 'clienteId',
+      foreignField: 'clienteId',
+      as: 'dados_cliente',
+    },
+  },
+  { $unwind: '$dados_cliente' },
+  {
+    $group: {
+      _id: '$dados_cliente.endereco.uf',
+      qtd_vendas: { $sum: 1 },
+      media_vendas: { $avg: '$valorTotal' },
+    },
+  },
+  { $project: { totalVendas: '$qtd_vendas', mediaVendas: '$media_vendas' } },
+]);
+
+
+
+use("erp");
+db.vendas.find(); 
+use("erp");
+db.produtos.find(); 
+use("erp");
+db.clientes.find(); 
