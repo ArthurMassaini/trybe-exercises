@@ -1,0 +1,16 @@
+{
+  "name": "calcula-imc",
+  "version": "1.0.0",
+  "description": "Calcular o IMC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Arthur Massaini",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "readline-sync": "^1.4.10"
+  }
+}
