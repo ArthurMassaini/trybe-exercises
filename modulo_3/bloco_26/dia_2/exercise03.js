@@ -12,11 +12,7 @@ const thirdExercise = async () => {
   ];
 
   try {
-    const response = await firstExercise(
-      randomNumber[0],
-      randomNumber[1],
-      randomNumber[2]
-    );
+    const response = await firstExercise(...randomNumber);
     return console.log(response);
   } catch (err) {
     return console.log(err.message);

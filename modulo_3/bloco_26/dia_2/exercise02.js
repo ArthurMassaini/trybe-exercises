@@ -11,7 +11,7 @@ const secondExercise = () => {
     getRandomNumber(),
   ];
 
-  firstExercise(randomNumber[0], randomNumber[1], randomNumber[2])
+  firstExercise(...randomNumber)
     .then((response) => console.log(response))
     .catch((err) => console.log(err.message));
 };
