@@ -1,4 +1,4 @@
-const test = (param1, param2, param3) => {
+const firstExercise = (param1, param2, param3) => {
   return new Promise((resolve, reject) => {
     const array = [param1, param2, param3];
 
@@ -14,18 +14,19 @@ const test = (param1, param2, param3) => {
   });
 };
 
+module.exports = firstExercise;
 
 // retorno correto: 153
-test(1, 50, 3)
-  .then((response) => console.log(response))
-  .catch((err) => console.log(err.message));
+// firstExercise(1, 50, 3)
+//   .then((response) => console.log(response))
+//   .catch((err) => console.log(err.message));
 
 // retorno incorreto: 'Informe apenas números'
-test(1, 'a', 3)
-  .then((response) => console.log(response))
-  .catch((err) => console.log(err.message));
+// firstExercise(1, 'a', 3)
+//   .then((response) => console.log(response))
+//   .catch((err) => console.log(err.message));
 
 // retorno incorreto: 'Valor muito baixo'
-test(1, 2, 3)
-  .then((response) => console.log(response))
-  .catch((err) => console.log(err.message));
+// firstExercise(1, 2, 3)
+//   .then((response) => console.log(response))
+//   .catch((err) => console.log(err.message));

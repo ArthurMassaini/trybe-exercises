@@ -1,18 +1,4 @@
-const firstExercise = (param1, param2, param3) => {
-  return new Promise((resolve, reject) => {
-    const array = [param1, param2, param3];
-
-    array.forEach((element) => {
-      if (typeof element !== 'number') {
-        reject(new Error('Informe apenas números'));
-      }
-    });
-
-    const equation = (param1 + param2) * param3;
-
-    equation < 50 ? reject(new Error('Valor muito baixo')) : resolve(equation);
-  });
-};
+const firstExercise = require('./exercise01');
 
 const getRandomNumber = () => {
   return Math.round(Math.random() * 100);
